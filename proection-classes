@@ -1,0 +1,5 @@
+PieceGenerator - создает новые фигуры на поле
+MoveValidator - валидирует ход игрока
+ScoreCalculator - начисляет очки игроку
+UserInput - считывает ввод игрока
+GameRender - выводит игру в консоль
