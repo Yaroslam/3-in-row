@@ -16,20 +16,20 @@ IsGameOver()             Запрос      игра начата                
 RestartGame()            команда     игра начата                          игра завершилась и началась новая
 RenderGame()             Запрос                                           игра и весь UI выводится в консоль
 
-Board
-ProcessMove(from, to) команда        from и to соседствуют и имеют фигуры  фигуры на from и to помененя местами
-FillCell(cell)        команда       cell пустая                           в cell есть фигура
-ClearCell(cell)       команда       cell не пустая                        cell пустая
-ApplyGravity()        команда                                             все piece под которомы ничего не было смещены вниз на 1
+Board +-
+ProcessMove(from, to) + команда        from и to соседствуют и имеют фигуры  фигуры на from и to помененя местами
+FillCell(cell) +       команда       cell пустая                           в cell есть фигура
+ClearCell(cell) +      команда       cell не пустая                        cell пустая
+ApplyGravity()  +      команда                                             все piece под которомы ничего не было смещены вниз на 1
 HasMove()             запрос                                              true если есть допустимый ход false если нет
-Draw()                запрос                                              поле выведено в консоль
+Draw()           +     запрос                                              поле выведено в консоль
 
-Piece
+Piece ++
 Type()               запрос                                               получен тип фигуры
 Draw()               запрос                                               фигура выведенеа в консоль
 IsEqual(piece)       команда      piece не является пустой                true если фигуры равны по значению false инача
 
-PieceGenerator
+PieceGenerator ++
 GeneratePiece()     команда                                               отдает сгенерированную случвйную piece из разрешенного диапозона
 
 UserInput
@@ -41,12 +41,12 @@ RenderGame()         команда                                             
 RenderUserInput()    команда                                              выведены поля для ввода пользователя
 RenderScore()        команда                                              выведены очки игрока
 
-StatsCollector
-CollectPoints(points) команда      points - валидное число                 points прибавлены к текущим
-CollectMoveHistory(move)  команда  move - валидный ход                     move записан в историю
-GetAllStats()        запрос                                                получены текущие очки и история ходов
+StatsCollector +-
+CollectPoints(points) ++ команда      points - валидное число                 points прибавлены к текущим
+CollectMoveHistory(move) --  команда  move - валидный ход                     move записан в историю
+GetAllStats() ++       запрос                                                получены текущие очки и история ходов
 
-MatchFinder
+MatchFinder ++
 FindAllMatches(board)    запрос     board существует                       возвращает все комбинации с доски
 ResolveMatches(matches, board)  команда    matches - непустые и существую на доске  начисляет очки и применяет бонусы за комбинации
 IsBonus(match)           запрос     match существует на доске                true если match является бонусным иначе фолс
@@ -54,7 +54,7 @@ IsBonus(match)           запрос     match существует на дос
 Bonus
 Apply(board)             команда    board существует                         применяет бонус на board
 
-ScoreCounter
+ScoreCounter ++
 CountScore(match)       команда    match валидный                            прибавляет очки за match к текущим
 CountBonusScore(bonus)  команда    bonus валидный                            прибавляет очки за bonus к текущим
 TotalScore()            запрос                                               возвращает текущие очки

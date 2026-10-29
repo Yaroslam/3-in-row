@@ -1,0 +1,17 @@
+{
+    "name": "happy/3-in-row",
+    "authors": [
+        {
+            "name": "sleepower dedicated",
+            "email": "sleepover@proton.mail"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Pieces\\": "src/Pieces/",
+            "Board\\": "src/Board",
+            "Engine\\": "src/Enginge",
+        }
+    }
+}
